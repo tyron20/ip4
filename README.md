@@ -14,3 +14,4 @@ vanila javascript
 
 ##HOW TO INSTALL
 Open github and click on the link 
+https://github.com/tyron20/ip4.git
