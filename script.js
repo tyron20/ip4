@@ -1,13 +1,15 @@
-let menu = document.querySelector('#menu-bar');
-let navbar = document. querySelector('.navbar');
+document.querySelector(".order-btn").addEventListener("click", placeOrder);
+// Pricing Object
+const price = {
+  size: { small: 600, medium: 850, large: 1200 },
+};
 
-menu.onclick = () =>{
-
-    menu.classList.toggle('fa-times')
-    navbar.classList.toggle('active')
-}
-
-window.onscroll = () =>{
-    menu.classList.remove('fa-times')
-    navbar.classList.remove('active')
+function placeOrder(event) {
+    event.preventDefault();
+  let sizeOption = document.querySelector("#size");
+  let size = price.size[sizeOption.options[sizeOption.selectedIndex].value];
+  let numberOfOders = document.querySelector("#pizzaNumber").value;
+  let totalCost = size * parseInt(numberOfOders);
+  document.querySelector(".order-summary").innerText = totalCost;
+  console.log(size, numberOfOders, totalCost)
 }
